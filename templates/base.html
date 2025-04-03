@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | Web-toolbox 🧰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+    <div class="nav-container">
+        <ul class="nav-ul">
+            {% for title, url in menu.items() %}
+                {% if url_for(url) == current_url %}
+                    <li><a class="menu-elem chosen-elem" href="{{ url_for(url) }}">{{ title }}</a></li>
+                {% else %}
+                    <li><a class="menu-elem" href="{{ url_for(url) }}">{{ title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="content-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

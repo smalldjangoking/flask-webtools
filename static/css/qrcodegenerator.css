@@ -1,0 +1,136 @@
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #27ae60;
+    width: 50%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.5);
+}
+
+.qr-text-input {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical; /* Разрешить изменение размера только по вертикали */
+
+}
+
+.qr-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.qr-img {
+    width: fit-content;
+    height: fit-content;
+}
+
+.highlight-text {
+    color: #27ae60;
+}
+
+.title-box {
+    margin-left: 25%;
+}
+
+.generate-btn {
+    background: #27ae60;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.generate-btn:hover {
+    background: #219150;
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.8);
+}
+
+.qr-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.created-text {
+    color: #27ae60;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.qr-container-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.download-btn {
+    display: flex;
+    padding: 20px;
+    background: #27ae60;
+    color: white;
+    width: fit-content;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-btn {
+    display: flex;
+    padding: 20px;
+    background: darkred;
+    color: white;
+    width: fit-content;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .qr-container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .qr-title {
+        font-size: 24px;
+    }
+
+    .generate-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .qr-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .qr-title {
+        font-size: 20px;
+    }
+
+    .generate-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
