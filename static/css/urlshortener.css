@@ -1,0 +1,78 @@
+.url-short-container {
+    display: flex;
+    background: whitesmoke;
+    margin-top: 55px;
+    width: 35vw;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.generated-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 3px;
+    height: 100% !important;
+    padding: 20px;
+}
+
+.btn {
+    width: 200px !important;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.input-url-div {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+}
+
+.green-text {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 8px;
+
+}
+
+.view-field {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    background: #808080;
+    border-radius: 5px;
+    gap: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+.view-field-text {
+    background: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    align-self: center;
+}
+
+.view-field img {
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.short-link-input {
+    border: none;
+    padding: 20px;
+    outline: none;
+    height: 25px;
+}

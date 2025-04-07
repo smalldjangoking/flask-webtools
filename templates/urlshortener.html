@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}URL-shortener{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/urlshortener.css") }}">
+{% endblock %}
+
+{% block content %}
+    <div class="url-short-container">
+        <div id="link-generator" class="input-url-div">
+            <label class="green-text" for="link">Paste your link here</label>
+            <input id="short-link-input" class="short-link-input" name="link" type="text"
+                   placeholder="https://example.com">
+            <button onclick="generate_link()" class="btn">SHORT 📉</button>
+        </div>
+    </div>
+    <div id="generated-links" class="generated-links url-short-container hidden">
+        <h3 class="green-text">YOUR SHORTENED LINK:</h3>
+        <div id="view-field" class="view-field">
+            <p id="view-field-text" class="view-field-text"></p>
+            <img id="copy-to-clipboard" src="{{ url_for('static', filename='/img/copy.png') }}" alt="copy-to-clipboard">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='/js/urlshortener.js') }}"></script>
+{% endblock %}

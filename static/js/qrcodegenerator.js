@@ -8,9 +8,9 @@ generateBtn.addEventListener("click", function () {
     fetch('/qr-code-generator', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ 'text': qrText.value }),  // Передаем в правильном формате
+        body: new URLSearchParams({ 'text': qrText.value }),
     })
-    .then(res => res.blob())  // Исправлено: просто вызываем .blob()
+    .then(res => res.blob())
     .then(blob => {
         const imgURL = URL.createObjectURL(blob);
         let img = new Image();
@@ -24,7 +24,7 @@ generateBtn.addEventListener("click", function () {
         downloadBtn.download = 'qr-code.png'
         downloadBtn.href = imgURL;
         downloadBtn.textContent = 'Download';
-        downloadBtn.className = 'download-btn';
+        downloadBtn.className = 'btn';
 
         cleanBtn.textContent = 'Delete';
         cleanBtn.className = 'delete-btn';

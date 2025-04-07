@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 pillow = "*"
 qrcode = "*"
+flask = "*"
+redis = "*"
 
 [dev-packages]
 
