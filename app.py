@@ -9,14 +9,13 @@ app = Flask(__name__)
 app.jinja_env.auto_reload = True  # Отключаем кеширование шаблонов
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # Автоматическая перезагрузка шаблонов
 
-menu = {'Main Page': 'index', 'QR-code Generator': 'qr_code_generator', 'URL-shortener': 'url_shortener'}
+menu = {'QR-code Generator': 'qr_code_generator', 'URL-shortener': 'url_shortener'}
 
-redis_db = Redis(host='localhost', port=6379)
+redis_db = Redis(host='redis', port=6379)
 
 @app.route('/')
 def index():
-    redis_db.incr('hits')
-    return 'This page has been visited {} times.'.format(redis_db.get('hits'))
+    return redirect('/qr_code_generator')
 
 @app.route('/qr-code-generator', methods=['GET', 'POST'])
 def qr_code_generator():
@@ -82,4 +81,4 @@ def url_redirect(short_url):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+    app.run(host='0.0.0.0' ,debug=True, use_reloader=True)
