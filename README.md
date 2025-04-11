@@ -31,3 +31,17 @@ If using Docker, you only need:
    git clone https://github.com/your-username/webtools.git
    cd webtools
    docker-compose up --build
+
+
+
+   ## Screenshots
+
+Below are some highlights of the FishMarket online store interface and functionality:
+
+| **Feature**          | **Screenshot**                                                                 |
+|----------------------|--------------------------------------------------------------------------------|
+| **QR-CODE Generator**     | ![QR Page](https://i.imgur.com/L2fvD9P.png)                               |
+| **Link-Shortener**        | ![Link-shortener](https://i.imgur.com/htokB9a.png)                        |
+| **Ip-checker**          | ![IP-Checker](https://i.imgur.com/wurJV65.png)                              |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
