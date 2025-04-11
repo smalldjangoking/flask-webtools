@@ -5,6 +5,19 @@
     font-family: sans-serif;
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 12px;
+    border: none;
+    width: 50%;
+    max-width: 600px;
+    margin: 55px auto !important;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
 body {
     display: flex;
     flex-direction: column;

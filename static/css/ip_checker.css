@@ -1,0 +1,45 @@
+.main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.personal-table {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.ip-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ip-section img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.ip-section .ip-address {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.details-section dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 10px;
+}
+
+.details-section dt {
+    font-weight: bold;
+    text-align: right;
+}
+
+.details-section dd {
+    margin: 0;
+}

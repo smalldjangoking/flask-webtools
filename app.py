@@ -1,21 +1,39 @@
+
 from flask import Flask, render_template, request, send_file, redirect
 import qrcode
 from io import BytesIO
 from redis import Redis
 
-from helpers import generate_link, recursion_generate_check
+from helpers import generate_link, recursion_generate_check, request_ip_data
 
 app = Flask(__name__)
 app.jinja_env.auto_reload = True  # Отключаем кеширование шаблонов
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # Автоматическая перезагрузка шаблонов
 
-menu = {'QR-code Generator': 'qr_code_generator', 'URL-shortener': 'url_shortener'}
+menu = {'QR-code Generator': 'qr_code_generator', 'URL-shortener': 'url_shortener', 'IP-checker': 'ip_checker'}
 
-redis_db = Redis(host='redis', port=6379)
+redis_db = Redis(host='localhost', port=6379)
 
 @app.route('/')
 def index():
     return redirect('/qr_code_generator')
+
+
+@app.route('/ip-checker')
+def ip_checker():
+    current_url = request.path
+    user_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+
+    context = {
+        'menu': menu,
+        'current_url': current_url,
+        'user_data': request_ip_data(user_ip)
+    }
+
+    print(context.items())
+
+    return render_template('ip_checker.html', **context)
+
 
 @app.route('/qr-code-generator', methods=['GET', 'POST'])
 def qr_code_generator():
@@ -36,7 +54,6 @@ def qr_code_generator():
     }
 
     return render_template('qrcodegenerator.html', **context)
-
 
 @app.route('/url_shortener', methods=['GET', 'POST'])
 def url_shortener():
@@ -81,4 +98,4 @@ def url_redirect(short_url):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' ,debug=True, use_reloader=True)
+    app.run(debug=True, use_reloader=True)

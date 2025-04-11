@@ -8,6 +8,8 @@ pillow = "*"
 qrcode = "*"
 flask = "*"
 redis = "*"
+requests = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

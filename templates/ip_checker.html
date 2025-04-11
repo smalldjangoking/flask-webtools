@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}User IP-address Checker{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ip_checker.css') }}">{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="personal-table">
+        <div class="ip-section">
+            <img src="{{ user_data.location.country_flag }}" alt="Флаг страны">
+            <span class="ip-address">{{ user_data.ip }}</span>
+        </div>
+        <div class="details-section">
+            <dl>
+                <dt>Type:</dt>
+                <dd>{{ user_data.type }}</dd>
+                <dt>Country code:</dt>
+                <dd>{{ user_data.country_code }}</dd>
+                <dt>Country name:</dt>
+                <dd>{{ user_data.country_name }}</dd>
+                <dt>Region code:</dt>
+                <dd>{{ user_data.region_code }}</dd>
+                <dt>Region name:</dt>
+                <dd>{{ user_data.region_name }}</dd>
+                <dt>City:</dt>
+                <dd>{{ user_data.city }}</dd>
+                <dt>ZIP:</dt>
+                <dd>{{ user_data.zip }}</dd>
+                <dt>Latitude:</dt>
+                <dd>{{ user_data.latitude }}</dd>
+                <dt>Longitude:</dt>
+                <dd>{{ user_data.longitude }}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+{% endblock %}
